@@ -3,7 +3,6 @@ FROM ubuntu:lunar-20230314
 ENV TEXT_FILE_NAME="abe.txt"
 ENV LOGPATH="logs"
 
-RUN export LOGPATH=$(cat ./config/container-logpath)
 WORKDIR /app
 RUN mkdir /app/${LOGPATH}
 COPY ./scripts ./scripts

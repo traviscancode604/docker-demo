@@ -5,4 +5,4 @@ export SEARCH_STRING="Shelbyville"
 export REPLACE_STRING="Capital City"
 export WELCOME_STRING="I hope you like some Abe Simpson...\nFrom \"Last Exit to Springfield\" S04E17..."
 
-./scripts/run.sh
+./scripts/app.sh

@@ -40,12 +40,15 @@ echo -e "\n♬♬♬♬♬♬♬♬♬♬♬♬♬♬♬♬♬♬♬♬♬♬♬
 ./scripts/read-file.sh ./${TEXT_FILE_NAME}
 echo -e "♬♬♬♬♬♬♬♬♬♬♬♬♬♬♬♬♬♬♬♬♬♬♬♬♬♬♬"
 
+
 star_box_art 'Step 2: Make the string replacement.'
-echo "It turns out Abe really meant ${REPLACE_STRING}, instead of ${SEARCH_STRING}. Let's make that fix.\n"
+echo -e "It turns out Abe really meant ${REPLACE_STRING}, instead of ${SEARCH_STRING}. Let's make that fix.\n"
 AMMENDED_FILE=$(./scripts/replace-string.sh ./${TEXT_FILE_NAME} "${SEARCH_STRING}" "${REPLACE_STRING}")
 
-echo -e "With the ammendment, this is the new non-sense:\n"
+echo -e "With the ammendment, this is the new non-sense:"
+echo -e "\n♬♬♬♬♬♬♬♬♬♬♬♬♬♬♬♬♬♬♬♬♬♬♬♬♬♬♬"
 echo ${AMMENDED_FILE}
+echo -e "♬♬♬♬♬♬♬♬♬♬♬♬♬♬♬♬♬♬♬♬♬♬♬♬♬♬♬"
 
 star_box_art 'Step 3: Make the string replacement.'
 echo "Now, we'll store the modified file outside of the Docker container so we can retrieve it later."
