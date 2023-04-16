@@ -1,16 +1,14 @@
 FROM ubuntu:lunar-20230314
 
-RUN apt-get update \
-  && apt-get install -q -y \
-    vim 
+ENV TEXT_FILE_NAME="abe.txt"
+ENV LOGPATH="logs"
 
+RUN export LOGPATH=$(cat ./config/container-logpath)
 WORKDIR /app
-RUN mkdir /app/logs 
+RUN mkdir /app/${LOGPATH}
 COPY ./scripts ./scripts
-
-COPY ./abe.txt ./abe.txt
+COPY ./${TEXT_FILE_NAME} ./${TEXT_FILE_NAME} 
 RUN chmod -R 755 ./scripts
 
-USER 1001
 SHELL ["bin/bash", "-c"]
 ENTRYPOINT ["/app/scripts/docker-entrypoint.sh"]
